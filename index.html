@@ -14,7 +14,20 @@
 html, body {
 	background-color: black;
 }
+.full-screen-link {
+	cursor: default;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-size: 0;
+	color: transparent;
+}
 </style>
+
+<a href="/" class="full-screen-link">Black</a>
 
 <script src="screenfull.js"></script>
 
@@ -73,6 +86,21 @@ var link = document.createElement('link');
 link.rel = 'icon';
 link.href = canvas.toDataURL();
 document.head.appendChild(link);
+
+})();
+</script>
+
+<script>
+(function () {
+
+/* Full screen link */
+
+var links = document.querySelectorAll('.full-screen-link');
+Array.prototype.forEach.call(links, function (link) {
+	link.addEventListener('click', function (e) {
+		e.preventDefault();
+	});
+});
 
 })();
 </script>
