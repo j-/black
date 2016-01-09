@@ -1,6 +1,10 @@
 {
 	"short_name": "Black",
 	"name": "Black",
+	"display": "standalone",
+	"start_url": "/",
+	"theme_color": "#000000",
+	"background_color": "#000000",
 	"icons": [
 		{
 			"src": "icon-256x256",
