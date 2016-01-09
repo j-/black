@@ -11,6 +11,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <link rel="manifest" content="manifest.json">
+<link rel="icon" type="image/png" href="icon-256x256.png">
 
 <title>Black</title>
 
@@ -80,23 +81,6 @@ window.addEventListener('keydown', function (e) {
 		handler(e);
 	}
 });
-
-})();
-</script>
-
-<script>
-(function () {
-
-/* Build favicon */
-
-var canvas = document.createElement('canvas');
-canvas.width = canvas.height = 1;
-var ctx = canvas.getContext('2d');
-ctx.fillRect(0, 0, 1, 1);
-var link = document.createElement('link');
-link.rel = 'icon';
-link.href = canvas.toDataURL();
-document.head.appendChild(link);
 
 })();
 </script>
