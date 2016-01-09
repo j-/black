@@ -1,4 +1,11 @@
 {
 	"short_name": "Black",
-	"name": "Black"
+	"name": "Black",
+	"icons": [
+		{
+			"src": "icon-256x256",
+			"sizes": "16x16 32x32 96x96",
+			"type": "image/png"
+		}
+	]
 }
