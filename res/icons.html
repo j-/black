@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<title>Black icons</title>
+
+<script>
+(function () {
+
+var SIZES = [
+	16,
+	32,
+	48,
+	64,
+	96,
+	256,
+];
+
+function buildIconImageElement (size) {
+	var canvas = document.createElement('canvas');
+	canvas.width = canvas.height = size;
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle = '#000';
+	ctx.fillRect(0, 0, size, size);
+	var image = new Image();
+	image.src = canvas.toDataURL();
+	return image;
+}
+
+function buildIconDisplayElement (size) {
+	var container = document.createElement('div');
+	var header = document.createElement('h1');
+	header.textContent = size + 'x' + size;
+	container.appendChild(header);
+	var image = buildIconImageElement(size);
+	container.appendChild(image);
+	return container;
+}
+
+function buildIconDisplayListElement (sizes) {
+	var container = document.createElement('div');
+	sizes.forEach(function (size) {
+		var item = buildIconDisplayElement(size);
+		container.appendChild(item);
+	});
+	return container;
+}
+
+var displayList = buildIconDisplayListElement(SIZES);
+
+document.addEventListener('DOMContentLoaded', function () {
+	document.body.appendChild(displayList);
+});
+
+})();
+</script>
