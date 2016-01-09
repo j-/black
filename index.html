@@ -33,6 +33,9 @@ html, body {
 	font-size: 0;
 	color: transparent;
 }
+.inactive {
+	cursor: none;
+}
 </style>
 
 <a href="." class="full-screen-link">Black</a>
@@ -109,6 +112,36 @@ Array.prototype.forEach.call(links, function (link) {
 		e.preventDefault();
 	});
 });
+
+})();
+</script>
+
+<script>
+(function () {
+
+/* Hide cursor on inactivity */
+
+var timer;
+var INACTIVE_TIME = 2 * 1000;
+var INACTIVE_CLASS = 'inactive';
+
+var link = document.querySelector('.full-screen-link');
+
+function registerActivity () {
+	link.classList.remove(INACTIVE_CLASS);
+	if (timer) {
+		clearTimeout(timer);
+	}
+	timer = setTimeout(inactivityLapsed, INACTIVE_TIME);
+}
+
+function inactivityLapsed () {
+	link.classList.add(INACTIVE_CLASS);
+}
+
+document.body.addEventListener('mousemove', registerActivity);
+
+registerActivity();
 
 })();
 </script>
