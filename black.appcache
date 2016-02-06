@@ -1,6 +1,10 @@
 CACHE MANIFEST
-# Updated 2016-01-09T15:41:07+11:00
+# Updated 2016-02-06T16:49:25+11:00
 index.html
 screenfull.js
+upup.min.js
+upup.min.js.map
+upup.sw.min.js
+upup.sw.min.js.map
 manifest.json
 icon-256x256.png

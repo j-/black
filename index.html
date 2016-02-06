@@ -42,6 +42,19 @@ html, body {
 <a href="." class="full-screen-link">Black</a>
 
 <script src="screenfull.js"></script>
+<script src="upup.min.js"></script>
+
+<script>
+UpUp.start({
+	'content-url': 'index.html',
+	'assets': [
+		'black.appcache',
+		'manifest.json',
+		'icon-256x256.png',
+		'screenfull.js',
+	],
+});
+</script>
 
 <script>
 (function () {
